@@ -192,44 +192,11 @@
 	    margin-bottom: 0.5em;
 	}
 
-	/* Container Styling */
-.view-list-container {
-    max-width: 600px;
-    margin: 0 auto;
-    text-align: left; /* Ensure container text is aligned left */
-}
-
-/* Section Styling */
-.section {
-    margin-bottom: 20px;
-    border: 1px solid #333;
-    padding: 10px;
-    border-radius: 8px;
-    text-align: left; /* Force left alignment for section text */
-}
-
-/* View List Button Styling */
-.view-list {
-    display: inline-block;
-    margin-top: 10px;
-    padding: 12px 20px;
-    font-size: 16px;
-    font-weight: bold;
-    color: white;
-    background-color: purple;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    text-transform: uppercase;
-    transition: background-color 0.3s ease;
-}
-
-/* Hover and Active States */
-.view-list:hover, 
-.view-list:active {
-    background-color: crimson; /* Reddish Color */
-    color: #fff;
-}
+	.active2,
+	summary:hover {
+	    background-color: #ccc;
+	    background-color: #ff1361;
+	}
 
 	table {
 	    border-collapse: collapse;
@@ -469,14 +436,4 @@
 		"#44107a",
 		"#60efbb",
 		"#5ae4f9" */
-
-/* General Reset */
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background-color: #000;
-    color: #fff;
-    text-align: center;
-    padding: 20px;
-}
 		
