@@ -200,6 +200,12 @@
     border-radius: 8px;
 }
 
+.active2,
+	summary:hover {
+	    background-color: #ccc;
+	    background-color: #ff1361;
+	}
+
 /* View List Button Styling */
 .view-list {
     display: inline-block;
