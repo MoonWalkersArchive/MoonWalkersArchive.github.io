@@ -40,54 +40,38 @@
 
 	<div class="top-margin-container">
 
-		</style>
-</head>
-<body>
-    <h1>Tool Finder</h1>
-    <input type="text" id="searchInput" placeholder="Search tools...">
-    <div id="results">
-        <p>Loading tools...</p>
-    </div>
+<script>
+		// List of Markdown files to render on the front page
+		const markdownFiles = ['https://raw.githubusercontent.com/MoonWalkersArchive/MoonWalkersArchive.github.io/refs/heads/main/Awesome%20Index.md']; // Add the files you want here
 
-    <script>
-        const markdownFiles = [
-            'https://raw.githubusercontent.com/MoonWalkersArchive/MoonWalkersArchive.github.io/refs/heads/main/Awesome%20Index.md',
+		// Function to fetch and render markdown content
+		function renderMarkdown(files) {
+			const converter = new showdown.Converter();
+			const container = document.getElementById('front-page-content');
+			container.innerHTML = ''; // Clear loading text
 
-        async function fetchAndSearchMarkdown() {
-            const searchInput = document.getElementById('searchInput');
-            const resultsContainer = document.getElementById('results');
-            const converter = new showdown.Converter();
-            let tools = []; // Array to store all tools from multiple files
-
-            // Fetch and process each Markdown file
-            for (const file of markdownFiles) {
-                try {
-                    const response = await fetch(file);
-                    const markdown = await response.text();
-                    const htmlContent = converter.makeHtml(markdown);
-
-                    // Extract plain text from HTML and split into lines
-                    const tempDiv = document.createElement('div');
-                    tempDiv.innerHTML = htmlContent;
-                    const plainText = tempDiv.textContent || tempDiv.innerText;
-                    tools = tools.concat(plainText.split('\n').filter(line => line.trim() !== ''));
-                } catch (error) {
-                    console.error(Error loading ${file}:, error);
-                }
-            }
-
-            // Render all tools initially
-            resultsContainer.innerHTML = tools.map(tool => <div class="item">${tool}</div>).join('');
-
-            // Add search functionality
-            searchInput.addEventListener('input', () => {
-                const query = searchInput.value.toLowerCase();
-                const filteredTools = tools.filter(tool => tool.toLowerCase().includes(query));
-                resultsContainer.innerHTML = filteredTools.length
-                    ? filteredTools.map(tool => <div class="item">${tool}</div>).join('')
-                    : '<p>No tools found.</p>';
-            });
-        }
+			files.forEach(file => {
+				fetch(file)
+					.then(response => {
+						if (!response.ok) {
+							throw new Error(`Error fetching ${file}`);
+						}
+						return response.text();
+					})
+					.then(text => {
+						const html = converter.makeHtml(text); // Convert Markdown to HTML
+						const section = document.createElement('section');
+						section.innerHTML = html;
+						container.appendChild(section);
+					})
+					.catch(err => {
+						const errorSection = document.createElement('p');
+						errorSection.style.color = 'red';
+						errorSection.textContent = `Error loading ${file}: ${err.message}`;
+						container.appendChild(errorSection);
+					});
+			});
+		}
 
 		<button class="myBtn2" id="scrollBackButton">
 			<div>Scroll Back</div>
