@@ -192,19 +192,21 @@
 	    margin-bottom: 0.5em;
 	}
 
-	/* Section Styling */
+	/* Container Styling */
+.view-list-container {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: left; /* Ensure container text is aligned left */
+}
+
+/* Section Styling */
 .section {
     margin-bottom: 20px;
     border: 1px solid #333;
     padding: 10px;
     border-radius: 8px;
+    text-align: left; /* Force left alignment for section text */
 }
-
-.active2,
-	summary:hover {
-	    background-color: #ccc;
-	    background-color: #ff1361;
-	}
 
 /* View List Button Styling */
 .view-list {
