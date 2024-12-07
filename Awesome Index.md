@@ -17,4 +17,10 @@
 - <span class="searchable-content" id="cool-websites"><a href="https://rentry.co/cool_websites" target="_blank">Cool Websites</a><i> ~ Collection of some of the best internet resources.</i></span>
 - <span class="searchable-content" id="pixelated-pathways"><a href="https://courage-1984.github.io/pixelated-pathways/" target="_blank">Pixelated Pathways</a><i> ~ The go-to place for internet stuff.</i></span>
 
+- **[FMHY](https://fmhy.net/)**  
+  *~ The largest collection of free stuff on the internet!*
+
+- **[Free Lunch](https://github.com/auctors/free-lunch)**  
+  *~ A curated list of free Windows software, online services, and resources.*
+
 </details>
