@@ -44,35 +44,6 @@
 		// List of Markdown files to render on the front page
 		const markdownFiles = ['https://raw.githubusercontent.com/MoonWalkersArchive/MoonWalkersArchive.github.io/refs/heads/main/Awesome%20Index.md']; // Add the files you want here
 
-		// Function to fetch and render markdown content
-		function renderMarkdown(files) {
-			const converter = new showdown.Converter();
-			const container = document.getElementById('front-page-content');
-			container.innerHTML = ''; // Clear loading text
-
-			files.forEach(file => {
-				fetch(file)
-					.then(response => {
-						if (!response.ok) {
-							throw new Error(`Error fetching ${file}`);
-						}
-						return response.text();
-					})
-					.then(text => {
-						const html = converter.makeHtml(text); // Convert Markdown to HTML
-						const section = document.createElement('section');
-						section.innerHTML = html;
-						container.appendChild(section);
-					})
-					.catch(err => {
-						const errorSection = document.createElement('p');
-						errorSection.style.color = 'red';
-						errorSection.textContent = `Error loading ${file}: ${err.message}`;
-						container.appendChild(errorSection);
-					});
-			});
-		}
-
 		<button class="myBtn2" id="scrollBackButton">
 			<div>Scroll Back</div>
 		</button>
