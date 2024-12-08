@@ -114,31 +114,13 @@ All credit for the original design and concept goes to the creator.
 		so I would say that it is somewhat curated by experience.
 	<br />
 
+<title>View List Button</title>
 </head>
 <body>
     <div class="view-list-container">
         <div class="section">
-            <h3>🌐 Link Indexes</h3>
-            <button class="view-list" onclick="toggleList(this)">▶ View List</button>
-            <div class="collapsible-content">
-                <!-- Dynamically Rendered Content -->
-                <p>https://raw.githubusercontent.com/MoonWalkersArchive/MoonWalkersArchive.github.io/main/Awesome%20Index.md: Awesome Index</p>
-                <!-- Replace this with the rendered .md content -->
-            </div>
-        </div>
-    </div>
-
-    <script>
-        function toggleList(button) {
-            const content = button.nextElementSibling; // Get the next sibling (the collapsible content)
-            if (content.style.display === "none" || content.style.display === "") {
-                content.style.display = "block"; // Show the content
-                button.textContent = "▼ Hide List"; // Change button text
-            } else {
-                content.style.display = "none"; // Hide the content
-                button.textContent = "▶ View List"; // Reset button text
-            }
-        } 
+            <h3>🌐 Awesome Index</h3>
+            <button class="view-list">▶ View List</button>
 
 <!-- Markdown content will be rendered here -->
     <div id="markdown-content">Loading content...</div>
