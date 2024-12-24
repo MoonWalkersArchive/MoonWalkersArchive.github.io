@@ -15,8 +15,8 @@ hero:
       link: /src/api-examples
 
 features:
-  - title: Feature A
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
+  - title: Adblocking/Privacy
+    details: Learn how to block ads, malware and other nasty things 
   - title: Feature B
     details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
   - title: Feature C
